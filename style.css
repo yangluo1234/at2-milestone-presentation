@@ -46,6 +46,10 @@ main {
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
+p {
+  line-height: 1.5rem;
+}
+
 footer {
   max-width: 100%;
   background: #1e2026;
