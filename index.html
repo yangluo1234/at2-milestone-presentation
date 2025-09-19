@@ -3,83 +3,211 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assessment Task 2 - Milestone Presentation</title>
+    <title>Sound Constellation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <header>
-      <h1>Milestone Presentation - Sound Constellation</h1>
+      <h1>Sound Constellation-Milestone Presentation</h1>
     </header>
 
     <main>
       <section class="card">
+        <h2>Prototype Demo</h2>
+        <img src="demo_pic.png" alt="Prototype Demo Screenshot" />
+        <p>
+          You can interact the live Prototype here:
+          <a href="https://soundconstellation.netlify.app/" target="_blank">
+            Sound Constellation Prototype
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </p>
+      </section>
+      <section class="card">
         <h2>Conceptual Response</h2>
         <p>
-          My chosen creative prompt is “No text characters”. The concept of my
-          prototype, Sound Constellation, is to let users create short melodies
-          by connecting stars into constellations. Instead of relying on text,
-          the interface uses visual metaphors such as glowing stars,
-          constellation lines, and common icons(play, reset, reverb) to guide
-          interaction. The aim is to make the interface intuitive, like drawing
-          on the night sky, while sound feedback and random background colour
-          changes add surprise and playfulness. The constellation imagery also
-          reflects the theme of mapping and imagination into sound.
+          The project <strong>Sound Constellation</strong> responds to the
+          creative prompt “No Text Characters”. The idea is to design an
+          interface that allows users to explore sound without relying on text
+          labels. Instead, the project uses stars and constellations as visual
+          metaphors. Users connect stars on a grid to form patterns, and each
+          pattern produces a sequence of musical notes. This method transforms
+          drawing into an act of composition, encouraging exploration through
+          both sight and sound.
+        </p>
+
+        <p>
+          The choice of a constellation theme is not only aesthetic but also
+          functional. Stars provide a clear and universal symbol that can guide
+          users without text, while the lines between stars make feedback
+          immediate and intuitive. The interface design relies on simple but
+          effective cues, such as brightness and motion, to signal that an
+          action has been recognised. This ensures that the UI remains
+          accessible and engaging, even for first-time users.
         </p>
       </section>
 
       <section class="card">
         <h2>Visual Plan / Sketch</h2>
+        <img src="AT2-plan_3.png" alt="Visual Plan Sketch" />
         <p>
-          This project aims to develop a web application that allows users to
-          track their daily habits and goals. The application will provide
-          features such as habit tracking, goal setting, and progress
-          visualization.
+          The Visual plan sketches show how stars, playback controls, and sound
+          effects work together as one system. Inspiration comes from projects
+          such as Chrome Music Lab (<a
+            href="https://musiclab.chromeexperiments.com/Experiments"
+            target="_blank"
+            >https://musiclab.chromeexperiments.com/Experiments</a
+          >), which demonstrates how minimal visuals and playful interaction can
+          create meaningful experiences. Sound Constellation applies a similar
+          idea, allowing users to express their creativity by interacting with
+          the interface and generating unique, beautiful sounds.
         </p>
       </section>
 
       <section class="card">
         <h2>Technical Approach</h2>
+        <img src="SystemMap.png" alt="System Map" />
         <p>
-          This project aims to develop a web application that allows users to
-          track their daily habits and goals. The application will provide
-          features such as habit tracking, goal setting, and progress
-          visualization.
+          The system is built with Tone.js PolySynth as the main sound engine.
+          Each star in the grid is linked to a musical note. When a user clicks
+          on a star, a single note is triggered and stored in an array. By
+          connecting several stars, the user forms a constellation path that
+          represents a sequence of notes.
+        </p>
+        <p>
+          When the <strong>Play</strong> button is pressed, the system plays the
+          stored notes one by one. The <strong>Math.random()</strong> function
+          is applied to introduce a slight variation of each note. This makes
+          every playback sound a little different, which creates a more natural
+          and playful experience. At the same time, the background colour is
+          also changed using <strong>Math.random()</strong>, so every sequence
+          has a unique visual identity in addition to its sound.
+        </p>
+        <p>
+          The <strong>Reset</strong> button clears all stored notes and visual
+          connections, allowing users to start a new constellation.
         </p>
       </section>
 
-      <section class="card">
-        <h2>Peer User Testing</h2>
-        <p>
-          This project aims to develop a web application that allows users to
-          track their daily habits and goals. The application will provide
-          features such as habit tracking, goal setting, and progress
-          visualization.
-        </p>
-      </section>
+      <section id="feedback" class="card">
+        <h2>Peer User Testing & Feedback</h2>
+        <!-- Feedback Prompts -->
+        <section>
+          <h3>Feedback Prompts</h3>
+          <ul>
+            <li>
+              Please try to connect a sequence of stars and then play it back.
+              Without text labels, should you first draw a path and then press
+              the play button? Did the icons for play' and 'reset' make sense to
+              you?
+            </li>
+            <li>
+              After pressing play, did the sound and the visuals match what you
+              expected from the constellation you drew? Was the random variation
+              in playback noticeable, and did it make the interaction feel fun
+              or confusing?
+            </li>
+            <li>
+              Did the background colour change or other visual effects help you
+              notice that your action was successful? Would you like to add more
+              effects, such as a filter or delay, to make the interaction
+              clearer?
+            </li>
+          </ul>
+        </section>
+        <!-- Feedback pics -->
+        <section>
+          <h3>Feedback Received</h3>
+          <div class="feedback-grid">
+            <figure class="feedback-item">
+              <img src="Feedback1.png" alt="Feedback 1 Screenshot" />
+              <figcaption>Sheet 1</figcaption>
+            </figure>
+            <figure class="feedback-item">
+              <img src="Feedback2.png" alt="Feedback 1 Screenshot" />
+              <figcaption>Sheet 2</figcaption>
+            </figure>
+            <figure class="feedback-item">
+              <img src="Feedback3.png" alt="Feedback 1 Screenshot" />
+              <figcaption>Sheet 3</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section>
+          <h3>Feedback Summary</h3>
+          <ul>
+            <li>
+              <strong>Controls:</strong> Most users found the interface
+              intuitive and easy to understand without text labels. The Play and
+              Reset buttons made sense, although a few users forgot to press
+              Play at first and only connected the stars. Some confusion was
+              mentioned about the slider, which looked like a volume control.
+            </li>
 
-      <section class="card">
-        <h2>Next Steps</h2>
-        <p>
-          This project aims to develop a web application that allows users to
-          track their daily habits and goals. The application will provide
-          features such as habit tracking, goal setting, and progress
-          visualization.
-        </p>
-      </section>
+            <li>
+              <strong>Sound & Playback:</strong> The sounds were described as
+              fun, pleasant, and well-matched to the constellation theme. The
+              reverb effect was appreciated, but the random variation was not
+              always noticed. Some users suggested adding more sound effects
+              (such as delay or filter changes) to make the audio richer.
+            </li>
 
-      <section class="card">
-        <h2>UI Demo</h2>
-        <p>
-          This project aims to develop a web application that allows users to
-          track their daily habits and goals. The application will provide
-          features such as habit tracking, goal setting, and progress
-          visualization.
-        </p>
+            <li>
+              <strong>Visual Feedback:</strong> The background colour change was
+              seen as a fun addition, but not everyone noticed it clearly. A few
+              participants suggested making the connecting lines more obvious or
+              adding extra dynamic effects, like twinkling stars or a
+              galaxy-like background. Others felt the current visuals were
+              already sufficient.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Reflection</h3>
+          <p>
+            The peer feedback provided several useful insights into the
+            strengths and areas for improvement in my project. Most users agreed
+            that the interface was straightforward to understand. They mentioned
+            that connecting stars and pressing the play button was intuitive,
+            even without text labels. This means that the design choice of using
+            only icons for play and reset was successful in supporting the
+            creative prompt of “No Text Characters”.
+          </p>
+          <p>
+            In addition, some users expressed minor confusion about the slider
+            and its function. While the reverb effect was noticeable, several
+            participants mentioned that the impact was subtle, and they
+            suggested adding clearer or more noticeable effects, such as delay
+            or audio filters. Furthermore, the background change was not always
+            strong enough to indicate success. Some users proposed additional
+            visual feedback, such as brighter connecting lines or twinkling
+            effects, to reinforce the interaction.
+          </p>
+          <p>
+            Overall, the peer feedback suggests that the main interaction of
+            drawing constellations and hearing them played back works well and
+            creates a playful and engaging experience. However, to strengthen
+            the clarity and impact, I plan to refine the visual and audio
+            feedback. This includes trying with stronger background changes,
+            more dynamic line animations, and adding an extra sound effect
+            option. These adjustments will make the interaction feel more
+            responsive while still maintaining the playful style for my project.
+          </p>
+        </section>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 My Project</p>
+      <p>&copy; 2025 Yang Luo s3354967. All rights reserved.</p>
     </footer>
   </body>
 </html>
